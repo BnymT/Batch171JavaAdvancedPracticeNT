@@ -29,18 +29,13 @@ public class Homework_1 {
 
         Scanner input = new Scanner(System.in);
 
-        int counter = 1;
         String req = "";
 
         do {
 
-            if (counter > 10) {
+        int counter = 1;
 
-                counter = 1;
-
-            }
-
-            System.out.println("Lutfen bir sayi giriniz");
+            System.out.println("Please enter a number");
 
             int x = (int) Math.floor(Math.random() * 101);
 
@@ -51,27 +46,34 @@ public class Homework_1 {
 
                 if (x == repoNum) {
 
-                    System.out.println("Tebrikler! " + x + " sayisini buldunuz!");
+                    System.out.println("Congratulations! You find the number " + x);
+
+                    System.out.println("Your points = " + ((10-counter)*10));
+
+                    System.out.println("Please enter \'1\' for replay the game.");
+
+                    req = input.next();
+
                     break;
 
                 } else if (x < repoNum) {
 
                     if (counter < 10) {
-                        System.out.println("Sayini biraz daha kucultmelisin");
+                        System.out.println("You must decrease your number");
                     }
                     counter++;
 
                 } else {
 
                     if (counter < 10) {
-                        System.out.println("Sayini biraz daha arttirmalisin");
+                        System.out.println("You must increase your number");
                     }
                     counter++;
 
                 }
                 if (counter > 10) {
 
-                    System.out.println("Oyunu kaybettiniz tekrar oynamak için '1' e basiniz");
+                    System.out.println("You lost the game... Please enter \'1\' for replay the game");
 
                     req = input.next();
 

@@ -1,6 +1,5 @@
 package practice02;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,40 +27,50 @@ public class Homework_2 {
 
         Scanner input = new Scanner(System.in);
 
-        String words[] = {"Elma", "Araba", "Çim", "Su", "Monitor"};
-        Random random = new Random();
-        int whichOne = random.nextInt(words.length);
-        String blank = "";
-        int count = 1;
+        String[] words = {"Apple", "Home", "Garden", "Collage", "School"};
 
-        if (words[whichOne] == "Elma") {
+        //Apple ___l_
+        Random rnd = new Random();
 
-            blank = words[whichOne];
+        int wordsIndex = rnd.nextInt(words.length);
+        int life = 5;
+        String word = words[wordsIndex];
 
-            blank.replaceAll("[A-Za-z]","_");
+        while (life > 0){
 
-            System.out.println("Lutfen harf giriniz");
-
-            do {
-
-                System.out.println(blank);
-
-                String letter = input.next();
-
-                if (words[whichOne].contains(letter)){
+            System.out.println("Please enter a letter");
+            System.out.println(underscore(word));
+            System.out.println(word);
+            String letter = input.next();
 
 
+                for (int i = 0; i < word.length(); i++) {
 
+                    if(word.charAt(i) == letter.charAt(0)){
+                        char letter1 = underscore(word).charAt(i);
+                        char letter2 = word.charAt(i);
 
-                count++;
+                        String newWord = underscore(word).replace(letter1, letter2);
+
+                        System.out.println(newWord);
+
+                    }
+
+                }
+                if (!word.contains(letter)){
+                System.out.println("Wrong letter");
                 }
 
-            } while(count < 6);
-
+            life--;
         }
 
+    }
 
+    public static String underscore(String word) {
 
+        String hiddenWord = word.replaceAll("[a-zA-Z]","_");
+
+        return hiddenWord;
     }
 
 }
