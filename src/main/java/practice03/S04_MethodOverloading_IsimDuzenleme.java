@@ -1,5 +1,7 @@
 package practice03;
 
+import java.util.Arrays;
+
 public class S04_MethodOverloading_IsimDuzenleme {
     public static void main(String[] args) {
 
@@ -17,6 +19,8 @@ public class S04_MethodOverloading_IsimDuzenleme {
 
         priceCalculating(productName[0], price[0]);
         priceCalculating(productName[0], price[0], 25);
+
+        System.out.println(Arrays.toString(price));
 
 
     }

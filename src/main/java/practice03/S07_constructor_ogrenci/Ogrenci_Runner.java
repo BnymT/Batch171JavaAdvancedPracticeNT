@@ -14,9 +14,13 @@ public class Ogrenci_Runner {
         Ogrenci student2 = new Ogrenci("Emine", 30,1);
         System.out.println(student2);
 
+        Ogrenci student5 = new Ogrenci("Ali", 13,2);
+        System.out.println(student5);
+
         // Alıştırma: Bir öğrencinin adını ve sınıfını güncelleyin ve değerlerini ekrana yazdırın
         student2.name = "Mehmet";
         System.out.println(student2);
+
 
     }
 
